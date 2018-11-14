@@ -21,42 +21,17 @@ public class Empresa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column(name = "name")
-	private String name;
+	@Column(name = "razaoSocial")
+	private String razaoSocial;
 
-	@Column(name = "email")
-	private String email;
+	@Column(name = "endereco")
+	private String endereco;
 
-	@Column(name = "registration")
-	private String registration;
+	@Column(name = "montadora")
+	private String montadora;
 	
-	@ManyToOne
-	@JoinColumn(name="module_id")
-	private Module module;
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setRegistration(String registration) {
-		this.registration = registration;
-	}
-
-	public String getRegistration() {
-		return registration;
-	}
+	@Column(name = "cnpj")
+	private String cnpj;
 
 	public Integer getId() {
 		return id;
@@ -66,12 +41,36 @@ public class Empresa implements Serializable {
 		this.id = id;
 	}
 
-	public Module getModule() {
-		return module;
+	public String getRazaoSocial() {
+		return razaoSocial;
 	}
 
-	public void setModule(Module module) {
-		this.module = module;
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getMontadora() {
+		return montadora;
+	}
+
+	public void setMontadora(String montadora) {
+		this.montadora = montadora;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 }

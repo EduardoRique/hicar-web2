@@ -13,66 +13,57 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "funcionario")
-public class Funcionario implements Serializable {
+public class Funcionario extends Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer matricula;
 
-	@Column(name = "name")
-	private String name;
+	@Column(name = "funcao")
+	private String funcao;
 
-	@Column(name = "email")
-	private String email;
-
-	@Column(name = "registration")
-	private String registration;
+	@Column(name = "salario")
+	private Double salario;
 	
 	@ManyToOne
-	@JoinColumn(name="module_id")
-	private Module module;
+	@JoinColumn(name="empresa")
+	private Empresa empresa;
 
-	public void setName(String name) {
-		this.name = name;
+	public Integer getMatricula() {
+		return matricula;
 	}
 
-	public String getName() {
-		return name;
+	public void setMatricula(Integer matricula) {
+		this.matricula = matricula;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public String getFuncao() {
+		return funcao;
 	}
 
-	public String getEmail() {
-		return email;
+	public void setFuncao(String funcao) {
+		this.funcao = funcao;
 	}
 
-	public void setRegistration(String registration) {
-		this.registration = registration;
+	public Double getSalario() {
+		return salario;
 	}
 
-	public String getRegistration() {
-		return registration;
+	public void setSalario(Double salario) {
+		this.salario = salario;
 	}
 
-	public Integer getId() {
-		return id;
+	public Empresa getEmpresa() {
+		return empresa;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
-
-	public Module getModule() {
-		return module;
-	}
-
-	public void setModule(Module module) {
-		this.module = module;
-	}
+	
+	
 
 }
 
